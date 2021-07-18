@@ -92,7 +92,7 @@ burgerMenu.addEventListener('click',function(e){
 let logoText = document.querySelector('.logo-text')
 let logoTextActive = document.querySelector('.logo-text-active')
 let width =  body.clientWidth;
-console.log(width)
+
 
 search.addEventListener('click',function(){
     if(width <= 520){
@@ -109,4 +109,13 @@ burgerMenu.addEventListener('click',function(e){
     e.stopPropagation();
     logoText.classList.remove('logo-text-active')
     
+})
+
+//при клике выбора языка , прячется поиск
+langBtn.addEventListener('click',function(){
+    langBtnHiden.forEach(elem =>{
+        if(search.classList.contains('search-active')){
+            search.classList.remove('search-active')
+        }
+    })
 })
